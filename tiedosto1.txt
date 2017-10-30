@@ -1,3 +1,4 @@
 Text in file
 More text added here
 More and more
+Even more here
