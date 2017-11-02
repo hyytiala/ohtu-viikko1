@@ -129,7 +129,7 @@ public class VarastoTest {
     public void alkuSaldoNegatiivinen(){
         Varasto testi = new Varasto(10, -2);
         
-        assertEquals(0, testi.getSaldo(), vertailuTarkkuus);
+        assertEquals(2, testi.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
