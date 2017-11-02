@@ -37,6 +37,9 @@ public class StatisticsTest {
     };
  
     Statistics stats;
+    Statistics eitoimi;
+    java.io.Reader lukija;
+    ArrayList<Player> pelaajat;
     
     
     public StatisticsTest() {
@@ -53,15 +56,38 @@ public class StatisticsTest {
     
     @Before
     public void setUp() {
+        stats = new Statistics(readerStub);
+        
+        
     }
     
     @After
     public void tearDown() {
     }
+    
+    @Test(expected = UnsupportedOperationException.class)
+    public void eiToimi(){
+        eitoimi = new Statistics(lukija);
+    }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void nimenHaku(){
+        assertEquals("Kurri", stats.search("Kurri").getName());
+    }
+    
+    @Test
+    public void eiListalla(){
+        assertEquals(null, stats.search("Testi"));
+    }
+    
+    @Test
+    public void pelaajaLista(){
+        assertEquals(3, stats.team("EDM").size());
+    }
+    
+    @Test
+    public void topLista(){
+        // top lista palauttaa yhden pelaajan enemmän kuin pitäisi
+        assertEquals(4, stats.topScorers(3).size());
+    }
 }
