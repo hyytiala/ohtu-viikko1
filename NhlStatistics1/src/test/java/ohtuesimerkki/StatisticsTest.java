@@ -36,10 +36,10 @@ public class StatisticsTest {
         }
     };
  
-    Statistics stats;
-    Statistics eitoimi;
-    java.io.Reader lukija;
-    ArrayList<Player> pelaajat;
+    private Statistics stats;
+    private Statistics eitoimi;
+    private java.io.Reader lukija;
+    private ArrayList<Player> pelaajat;
     
     
     public StatisticsTest() {
